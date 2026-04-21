@@ -1,0 +1,17 @@
+services:
+  wan-video-api:
+    build: .
+    image: wan-video-api:latest
+    container_name: wan-video-api
+    runtime: nvidia
+    ports:
+      - "9000:8000"
+    volumes:
+      - /home/esit/projects/wan-video/modelos:/models
+      - /home/esit/projects/wan-video/outputs:/tmp
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    shm_size: "8gb"
+    restart: unless-stopped
+ 

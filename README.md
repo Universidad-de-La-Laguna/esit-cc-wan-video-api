@@ -2,6 +2,8 @@
 Minimal HTTP API for text-to-video generation using Wan2.1, served via FastAPI and Docker with GPU support.
 
 
+
+
 # Wan2.1 Video API
 
 API HTTP minimalista para generación de video a partir de texto, basada en el modelo [Wan2.1-T2V-1.3B](https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B-Diffusers) de Alibaba. Desplegada como contenedor Docker con acceso GPU.

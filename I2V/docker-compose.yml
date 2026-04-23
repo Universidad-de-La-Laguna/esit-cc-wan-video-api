@@ -1,0 +1,16 @@
+services:
+  wan-i2v-api:
+    build: .
+    image: wan-i2v-api:latest
+    container_name: wan-i2v-api
+    runtime: nvidia
+    ports:
+      - "9000:8000"
+    volumes:
+      - /home/esit/projects/wan-i2v/modelos:/models
+      - /home/esit/projects/wan-i2v/outputs:/tmp
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    shm_size: "8gb"
+    restart: unless-stopped
